@@ -1,8 +1,6 @@
 package keithcod.es.mineget;
 
 
-import com.google.gson.Gson;
-import com.sun.deploy.util.StringUtils;
 import keithcod.es.mineget.wrappers.Bukget;
 import keithcod.es.mineget.wrappers.Spiget;
 
@@ -10,17 +8,12 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.ReadableByteChannel;
 import java.nio.file.*;
 import java.util.Base64;
-import java.util.HashMap;
 
 public class MineGet {
 
     public static void main(String[] args) {
-
-
         if (args.length > 0 && args[0].equals("list")){
             int size = args.length > 1 ? Integer.parseInt(args[1], 10) : 10;
             int page = args.length > 2 ? Integer.parseInt(args[2], 0) : 0;
@@ -61,7 +54,7 @@ public class MineGet {
                 }
             }else if (code == 404){
                 System.out.println("Cannot find any plugins matching the search");
-            }{
+            }else{
                 System.out.println("BukGet appears to be down!");
             }
 
